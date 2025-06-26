@@ -1,0 +1,16 @@
+<h3>Propriétés</h3>
+
+<div *ngIf="selectedElement; else noSelection">
+  <div *ngFor="let key of objectKeys(selectedElement.properties)">
+    <label>{{ key }}</label>
+    <input
+      [value]="selectedElement.properties[key]"
+    (input)="updatePropertyFromEvent(key, $event)"
+    />
+  </div>
+</div>
+
+<ng-template #noSelection>
+  <p>Aucun élément sélectionné</p>
+</ng-template>
+

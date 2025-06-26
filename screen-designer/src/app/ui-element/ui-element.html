@@ -1,3 +1,4 @@
+<div (click)="onClick()">
 <ng-container [ngSwitch]="data.type">
 
   <button *ngSwitchCase="'button'">{{ data.properties['label'] }}</button>
@@ -28,4 +29,4 @@
   <p *ngSwitchDefault>Type inconnu : {{ data.type }}</p>
 
 </ng-container>
-
+</div>

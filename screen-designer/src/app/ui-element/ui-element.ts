@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output , EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UIelement } from '../uielement';
 
@@ -11,4 +11,8 @@ import { UIelement } from '../uielement';
 })
 export class UiElement {
   @Input() data!: UIelement;
+   @Output() clicked = new EventEmitter<UIelement>();
+  onClick() {
+    this.clicked.emit(this.data);
+  }
 }
