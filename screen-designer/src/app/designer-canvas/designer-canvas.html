@@ -2,8 +2,6 @@
 <div
   cdkDropList
   [cdkDropListData]="droppedElements"
-  [cdkDropListConnectedTo]="[]"
-  [cdkDropListSortingDisabled]="true"
   (cdkDropListDropped)="onDrop($event)"
   class="drop-zone"
 >
@@ -11,7 +9,6 @@
     *ngFor="let elem of droppedElements"
     [data]="elem"
     (clicked)="selectElement(elem)"
-    class="ui-block"
   ></app-ui-element>
 </div>
 

@@ -13,6 +13,8 @@ export class UiElement {
   @Input() data!: UIelement;
    @Output() clicked = new EventEmitter<UIelement>();
   onClick() {
+    console.log ("test de clcik ok") ; 
+    console.log('Click sur un UIElement :', this.data); 
     this.clicked.emit(this.data);
   }
 }
