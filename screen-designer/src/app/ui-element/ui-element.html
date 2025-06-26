@@ -1,1 +1,31 @@
-<p>ui-element works!</p>
+<ng-container [ngSwitch]="data.type">
+
+  <button *ngSwitchCase="'button'">{{ data.properties['label'] }}</button>
+
+  <input *ngSwitchCase="'input'" [placeholder]="data.properties['placeholder']" />
+
+  <textarea *ngSwitchCase="'textarea'" [placeholder]="data.properties['placeholder']"></textarea>
+
+  <select *ngSwitchCase="'select'">
+    <option *ngFor="let opt of data.properties['options']">{{ opt }}</option>
+  </select>
+
+  <label *ngSwitchCase="'checkbox'">
+    <input type="checkbox" />
+    {{ data.properties['label'] }}
+  </label>
+
+  <span *ngSwitchCase="'label'">{{ data.properties['text'] }}</span>
+
+  <img *ngSwitchCase="'image'" [src]="data.properties['src']" style="max-width: 100%;" />
+
+  <hr *ngSwitchCase="'divider'" />
+
+  <div *ngSwitchCase="'container'" [ngStyle]="{ 'background-color': data.properties['backgroundColor'], 'padding': data.properties['padding'] }">
+    <p>Bloc vide (tu pourras y mettre des éléments plus tard)</p>
+  </div>
+
+  <p *ngSwitchDefault>Type inconnu : {{ data.type }}</p>
+
+</ng-container>
+

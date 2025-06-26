@@ -57,3 +57,11 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+les components : 
+designer-canvas      # Zone de création
+component-palette    # Liste des éléments à drag
+ui-element           # Représente un bloc (ex : bouton)
+ejs-export             # Pour l’export .ejs

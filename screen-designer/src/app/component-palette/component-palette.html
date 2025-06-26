@@ -1,1 +1,9 @@
-<p>component-palette works!</p>
+<h3>Palette</h3>
+<div
+  *ngFor="let comp of components"
+  cdkDrag
+  [cdkDragData]="comp"
+  class="palette-item"
+>
+  {{ comp.type }}
+</div>

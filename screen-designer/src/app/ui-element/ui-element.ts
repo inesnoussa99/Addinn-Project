@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UIelement } from '../uielement';
 
 @Component({
   selector: 'app-ui-element',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './ui-element.html',
-  styleUrl: './ui-element.css'
+  styleUrls: ['./ui-element.css']
 })
 export class UiElement {
-
+  @Input() data!: UIelement;
 }
