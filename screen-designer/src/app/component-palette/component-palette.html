@@ -1,8 +1,17 @@
+<div class="add-card-container">
+<select [(ngModel)]="selectedType" class="add-card-input">
+  <option [ngValue]="null" disabled selected>Choisir le type...</option>
+  <option *ngFor="let t of elementTypes" [value]="t">{{ t }}</option>
+</select>
+</div>
+<button (click)="addCard()" class="add-card-button">Ajouter carte</button>
 <div
   *ngFor="let comp of components"
+  (click)="selectComponent(comp)"
   cdkDrag
   [cdkDragData]="comp"
-  class="palette-item"
->
-  {{ comp.type }}
+  class="card">
+  <div class="card-icon">{{ getIcon(comp.type) }}</div>
+  <div class="card-label">{{ comp.type }}</div>
 </div>
+

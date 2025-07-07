@@ -1,18 +1,18 @@
 :host {
   display: block;
-  width: 220px;
+  width: 400px;
   padding: 15px;
-  background: linear-gradient(to bottom, #ffffff, #f7f9fc);
-  border: 1px solid #ddd;
+  background: linear-gradient(to bottom, #ffffff, #f0f4ff); /* dégradé blanc -> bleu pastel */
+  border: 1px solid #d0d7e5;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 h3 {
   margin-top: 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #2b4360; /* bleu foncé jeune */
 }
 
 .palette-item {
@@ -20,19 +20,113 @@ h3 {
   align-items: center;
   gap: 10px;
   padding: 10px;
-  margin-bottom: 10px;
-  background-color: #edf2f7;
-  border-left: 5px solid #4299e1;
-  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #e3f2fd; /* bleu pastel */
+  border-left: 5px solid #42a5f5; /* bleu vif */
+  border-radius: 10px;
   cursor: grab;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .palette-item:hover {
-  background-color: #e2e8f0;
-  transform: scale(1.02);
+  background-color: #bbdefb; /* bleu plus marqué au hover */
+  transform: scale(1.03);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .palette-icon {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  color: #1e88e5; /* bleu attractif */
+}
+.card {
+  width: 380px;              /* carré */
+  height: 120px;             /* carré */
+  background-color: #e3f2fd; /* bleu pastel */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2b4360;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background-color: #bbdefb; /* bleu plus vif */
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #1e88e5;
+}
+
+.card-label {
+  font-size: 0.9rem;
+  color: #2b4360;
+}
+
+.add-card-input {
+  flex: 1; /* prend l'espace disponible */
+  
+  padding: 8px 12px;
+  border: 2px solid #a7c7e7;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+}
+
+
+.add-card-input:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2);
+}
+.add-card-button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 16px;
+  /* margin-top: 8px; */
+  margin-bottom: 10px;
+  background-color: #42a5f5;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.add-card-button:hover {
+  background-color: #1e88e5;
+  box-shadow: 0 4px 8px rgba(66, 165, 245, 0.3);
+  transform: translateY(-2px);
+}
+
+.add-card-button:active {
+  background-color: #1565c0;
+  transform: translateY(0);
+}
+
+.add-card-container {
+  display: flex;
+  gap: 8px; /* espace entre input et bouton */
+  align-items: center;
+  margin-bottom: 20px; /* espace sous le bloc */
 }

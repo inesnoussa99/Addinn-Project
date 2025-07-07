@@ -1,4 +1,4 @@
-<h3>Canvas</h3>
+<!--<h3>Canvas</h3>
 <div
   cdkDropList
   [cdkDropListData]="droppedElements"
@@ -10,5 +10,13 @@
     [data]="elem"
     (clicked)="selectElement(elem)"
   ></app-ui-element>
-</div>
+</div>-->
 
+<h3>Canvas</h3>
+<div
+  #gridContainer
+  class="grid-stack"
+  cdkDropList
+  (cdkDropListDropped)="onDrop($event)">
+</div>
+<button (click)="exportToEJS()">Exporter en EJS</button>

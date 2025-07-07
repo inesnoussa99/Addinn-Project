@@ -1,0 +1,8 @@
+
+  
+<div class="container">
+<app-component-palette (select)="onElementSelected($event)"></app-component-palette>
+<app-designer-canvas (selectElement)="onElementSelected($event)"></app-designer-canvas>
+<app-properties-panel [element]="selectedElement"></app-properties-panel>
+</div>
+

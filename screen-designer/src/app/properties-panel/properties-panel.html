@@ -1,16 +1,63 @@
-<h3>Propriétés</h3>
+<div *ngIf="element; else noSelection">
+  <h3>Éditer : {{ element.type | uppercase }}</h3>
 
-<div *ngIf="selectedElement; else noSelection">
-  <div *ngFor="let key of objectKeys(selectedElement.properties)">
-    <label>{{ key }}</label>
-    <input
-      [value]="selectedElement.properties[key]"
-    (input)="updatePropertyFromEvent(key, $event)"
-    />
+  <!-- Pour BUTTON -->
+  <div *ngIf="element.type === 'button'">
+    <label>Label :</label>
+    <input [(ngModel)]="element.properties['label']" />
+  </div>
+
+  <!-- Pour INPUT -->
+  <div *ngIf="element.type === 'input'">
+    <label>Placeholder :</label>
+    <input [(ngModel)]="element.properties['placeholder']" />
+  </div>
+
+  <!-- Pour TEXTAREA -->
+  <div *ngIf="element.type === 'textarea'">
+    <label>Placeholder :</label>
+    <input [(ngModel)]="element.properties['placeholder']" />
+  </div>
+
+  <!-- Pour LABEL -->
+  <div *ngIf="element.type === 'label'">
+    <label>Texte :</label>
+    <input [(ngModel)]="element.properties['text']" />
+  </div>
+
+  <!-- Pour CHECKBOX -->
+  <div *ngIf="element.type === 'checkbox'">
+    <label>Label :</label>
+    <input [(ngModel)]="element.properties['label']" />
+  </div>
+
+  <!-- Pour IMAGE -->
+  <div *ngIf="element.type === 'image'">
+    <label>Image URL :</label>
+    <input [(ngModel)]="element.properties['src']" />
+  </div>
+
+  <!-- Pour SELECT -->
+  <div *ngIf="element.type === 'select'">
+    <label>Options (séparées par des virgules) :</label>
+    <input [ngModel]="element.properties['options']?.join(', ')" 
+           (ngModelChange)="updateOptions($event)" />
+  </div>
+
+  <!-- Pour CONTAINER -->
+  <div *ngIf="element.type === 'container'">
+    <label>Background Color :</label>
+    <input [(ngModel)]="element.properties['backgroundColor']" type="color" />
+    <label>Padding :</label>
+    <input [(ngModel)]="element.properties['padding']" />
+  </div>
+
+  <!-- Pour DIVIDER -->
+  <div *ngIf="element.type === 'divider'">
+    <p>Aucune propriété à éditer pour un séparateur.</p>
   </div>
 </div>
 
 <ng-template #noSelection>
-  <p>Aucun élément sélectionné</p>
+  <p>Aucun élément sélectionné.</p>
 </ng-template>
-

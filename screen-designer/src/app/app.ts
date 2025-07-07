@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ComponentPalette } from './component-palette/component-palette';
-import { DesignerCanvasComponent } from './designer-canvas/designer-canvas';
-import { PropertiesPanel } from './properties-panel/properties-panel';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , DragDropModule , ComponentPalette , DesignerCanvasComponent,PropertiesPanel],
+  standalone: true,
+  imports: [RouterOutlet , RouterLink, RouterLinkActive],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected title = 'screen-designer';

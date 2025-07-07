@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesignerCanvas } from './designer-canvas';
+import { Design } from './design';
 
-describe('DesignerCanvas', () => {
-  let component: DesignerCanvas;
-  let fixture: ComponentFixture<DesignerCanvas>;
+describe('Design', () => {
+  let component: Design;
+  let fixture: ComponentFixture<Design>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DesignerCanvas]
+      imports: [Design]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DesignerCanvas);
+    fixture = TestBed.createComponent(Design);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,13 @@
+
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .shield { fill: #007BFF; }
+      .shield-inner { fill: #ffffff; }
+      .letters { fill: #007BFF; font-size: 140px; font-family: sans-serif; font-weight: bold; }
+    </style>
+  </defs>
+  <path class="shield" d="M150 10 C230 10 280 60 280 140 C280 230 150 290 150 290 C150 290 20 230 20 140 C20 60 70 10 150 10 Z"/>
+  <path class="shield-inner" d="M150 30 C220 30 260 70 260 140 C260 210 150 270 150 270 C150 270 40 210 40 140 C40 70 80 30 150 30 Z"/>
+  <text x="50%" y="58%" text-anchor="middle" alignment-baseline="middle" class="letters">SD</text>
+</svg>
